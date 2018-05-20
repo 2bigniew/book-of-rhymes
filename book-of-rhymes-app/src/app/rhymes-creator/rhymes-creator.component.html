@@ -1,0 +1,10 @@
+<form>
+    <input type="text" (input)="onInput($event)" placeholder="Word, you rhyme" id="rhyme-input"/>
+    <button (click)="addRhymePage()">Add new rhymes's page</button>
+</form>
+<button>Load page</button>
+<section class="pages">
+  <div class="pages-container"  *ngFor="let page of rhymesPages, let i = index">
+    <app-rhyme-page [pageTitle]="page" [pageIndex]="i"></app-rhyme-page>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<article class="rhyme-page">
+  <form>
+    <label class="rp__title">{{ pageIndex+1 + '. ' + pageTitle }}</label>
+    <button class="rp--delete" (click)="deletePage(pageTitle)">X</button><br />
+
+    <input class="rp--input" type="text" placeholder="Write rhyme here..." (input)="getRhyme($event)" id="rp-input"/>
+    <button class="rp--btn"(click)="addRhyme()">Add rhyme!</button><br />
+
+    <label *ngFor="let rhyme of rhymesPage" class="rp__rhyme">
+      <span class="rhyme-content">{{ rhyme }}</span>
+      <button class="rp__rhyme--btn" (click)="deleteRhyme(rhyme)">X</button>
+    </label>
+
+    <input type="submit" value="Save that $h!t !" class="rp--submit" />
+  </form>
+
+</article>

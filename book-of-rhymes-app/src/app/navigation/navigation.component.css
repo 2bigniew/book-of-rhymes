@@ -1,0 +1,36 @@
+.nav {
+  display: block;
+  width: 100%;
+  background: black;
+}
+
+.navlist {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.navlist__item {
+  padding: 6px 2%;
+}
+
+.navlist--link {
+  color: white;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  padding: 10px 6px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.navlist--link:hover {
+  color: gray;
+  border-top: 1px solid rgb(245,245,245);
+  border-bottom: 1px solid rgb(245,245,245);
+}
+

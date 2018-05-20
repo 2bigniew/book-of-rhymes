@@ -1,0 +1,30 @@
+<footer class="footer">
+  <ul class="contact">
+    <li class="contact__item">
+      <a href="https://github.com/2bigniew" class="contact--link" target="_blank" (click)='resetFooterData()'>
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+    <li class="contact__item">
+      <a href="https://2bigniew.github.io/my_portfolio/" target="_blank" class="contact--link" (click)='resetFooterData()'>
+        <i class="fas fa-globe"></i>
+      </a>
+    </li>
+    <li class="contact__item">
+      <a href="https://www.linkedin.com/in/zbigniew-stasiak/" target="_blank" class="contact--link" (click)='resetFooterData()'>
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+    <li class="contact__item">
+      <button class="contact--btn" (click)="showMailAdress()">
+        <i class="far fa-envelope"></i>
+      </button>
+    </li>
+    <li class="contact__item">
+      <button class="contact--btn" (click)="showPhoneNumber()">
+        <i class="fas fa-phone"></i>
+      </button>
+    </li>
+  </ul>
+  <p class="contact--data">{{ footerData }}</p>
+</footer>

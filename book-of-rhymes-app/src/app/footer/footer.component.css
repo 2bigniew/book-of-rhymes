@@ -1,0 +1,46 @@
+.footer {
+  background: black;
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.contact__item {
+  float: left;
+  margin: 10px 15px 0 15px;
+}
+
+.contact--link {
+  color: white;
+}
+
+.contact--data {
+  color: white;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c02206;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact--btn {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.contact--link:hover, .contact--btn:hover {
+  color: #c02206;
+}

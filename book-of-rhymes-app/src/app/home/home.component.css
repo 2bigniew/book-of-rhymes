@@ -1,0 +1,8 @@
+.container {
+  background: linear-gradient(rgba(0, 0, 0, 0.904), rgba(59, 57, 59, 0.63)), url("../../assets/nimo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  width: 100%;
+}
