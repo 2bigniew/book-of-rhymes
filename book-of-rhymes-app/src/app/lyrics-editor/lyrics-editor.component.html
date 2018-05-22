@@ -1,22 +1,42 @@
 <div class="lyrics-content">
-  <form class="lyrics-editor">
-    <label>Title</label>
-    <input type="text" />
-    <textarea></textarea>
-    <textarea></textarea>
-    <textarea></textarea>
-    <textarea></textarea>
-    <textarea></textarea>
-    <textarea></textarea>
+  <input type="text" (input)="getLyricsName($event)" placeholder="Pass lyrics title here..." *ngIf="add"/><br />
+  <!-- Add disable when start to create lyrics (change title no available) -->
+  <form class="lyrics-editor" *ngIf="createLyrics else noLyrics">
+    <input [name]="lyricsName" [value]="lyricsName" placeholder="Lyrics Name"/>
+    <textarea
+      *ngFor="let section of lyricsStructure"
+      [cols]="section.columns"
+      [rows]="section.rows"
+      [name]="lyricsName+'_'+section.value+'_'+section.num">
+    </textarea>
+    <select class="" id="structure">
+      <option *ngFor="let opt of lyricsOptions" [value]="opt.value" (click)="createLyricsSection(opt.value)">{{ opt.value }}</option>
+    </select>
+
+    <div *ngIf="lyricsDetails else noDetails">
+      <input type="text" placeholder="Author firstname" />
+      <input type="text" placeholder="Author lastname" />
+      <input type="text" placeholder="Author hometown" />
+      <input type="text" placeholder="Lyrics year" />
+      <input type="text" placeholder="Lyrics - music genre" />
+    </div>
+    <ng-template #noDetails>
+      <p>No lyrics details</p>
+    </ng-template>
+
   </form>
+  <ng-template #noLyrics>
+    <p class="add-lyrics--btn">Add new lyrics</p>
+  </ng-template>
   <div class="lyrics-panel">
-    <button>Add title</button>
-    <button>Add verse</button>
+    <button (click)="addLyrics()">Add lyrics</button>
+    <!-- <button>Add verse</button>
     <button>Add chorus</button>
     <button>Add intro</button>
-    <button>Add outro</button>
+    <button>Add outro</button> -->
     <button>Save lyrics</button>
     <button>Edit lyrics</button>
-    <button>Add song details</button>
+    <!-- add lyrics details disabled default - enable after add content -->
+    <button (click)="addLyricsDetails()">Add lyrics details</button>
   </div>
 </div>
